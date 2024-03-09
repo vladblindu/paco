@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Paraglide Paraglide distributed messages collection utility",
   "main": "index.cjs",
+  "bin": {
+    "paco": "index.cjs"
+  },
   "directories": {
     "test": "test"
   },
