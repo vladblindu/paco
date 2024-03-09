@@ -1,0 +1,6 @@
+{
+  "DEFAULT_ROOT": "../",
+  "SOURCE_ROOT": "src",
+  "DEFAULT_INLANG_PATH": "project.inlang",
+  "DEFAULT_SETTINGS_FILE_NAME": "settings.json"
+}

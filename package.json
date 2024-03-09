@@ -1,0 +1,24 @@
+{
+  "name": "paco",
+  "version": "1.0.0",
+  "description": "Paraglide Paraglide distributed messages collection utility",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node --test ./test/*.specs.cjs"
+  },
+  "keywords": [
+    "paraglide",
+    "inlang",
+    "node",
+    "commonjs"
+  ],
+  "author": "M-Tag",
+  "license": "MIT",
+  "types": "./index.d.ts",
+  "dependencies": {
+    "arg": "^5.0.2"
+  }
+}

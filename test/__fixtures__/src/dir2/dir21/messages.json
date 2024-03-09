@@ -1,0 +1,37 @@
+{
+  "en": {
+    "home": "Home",
+    "products": "Our Products",
+    "team": "Meet Our Team",
+    "careers": "Careers",
+    "blog": "Read Our Blog"
+  },
+  "fr": {
+    "home": "Accueil",
+    "products": "Nos Produits",
+    "team": "Rencontrez Notre Équipe",
+    "careers": "Carrières",
+    "blog": "Lisez Notre Blog"
+  },
+  "it": {
+    "home": "Casa",
+    "products": "I Nostri Prodotti",
+    "team": "Incontra il Nostro Team",
+    "careers": "Carriere",
+    "blog": "Leggi il Nostro Blog"
+  },
+  "de": {
+    "home": "Zuhause",
+    "products": "Unsere Produkte",
+    "team": "Treffen Sie Unser Team",
+    "careers": "Karriere",
+    "blog": "Lies Unseren Blog"
+  },
+  "es": {
+    "home": "Casa",
+    "products": "Nuestros Productos",
+    "team": "Conoce a Nuestro Equipo",
+    "careers": "Carreras",
+    "blog": "Lee Nuestro Blog"
+  }
+}

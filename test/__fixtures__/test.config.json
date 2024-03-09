@@ -1,0 +1,12 @@
+{
+  "i118n": {
+    "sourceLanguageTag": "ru",
+    "restLanguageTags": [
+      "it",
+      "de"
+    ],
+    "messagesFileName": "messages.json",
+    "messagesPath": "./test-messages",
+    "messagesFilePattern": "{test}.json"
+  }
+}

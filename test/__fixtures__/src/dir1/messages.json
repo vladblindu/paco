@@ -1,0 +1,37 @@
+{
+  "en": {
+    "about_us": "About us",
+    "contact_us": "Contact us",
+    "work_with_us": "Work with us",
+    "services": "Our services",
+    "welcome": "Welcome to our website!"
+  },
+  "fr": {
+    "about_us": "À propos de nous",
+    "contact_us": "Contactez-nous",
+    "work_with_us": "Travailler avec nous",
+    "services": "Nos services",
+    "welcome": "Bienvenue sur notre site Web!"
+  },
+  "it": {
+    "about_us": "Riguardo a noi",
+    "contact_us": "Contattaci",
+    "work_with_us": "Lavora con noi",
+    "services": "I nostri servizi",
+    "welcome": "Benvenuto nel nostro sito Web!"
+  },
+  "de": {
+    "about_us": "Über uns",
+    "contact_us": "Kontaktiere uns",
+    "work_with_us": "Arbeite mit uns",
+    "services": "Unsere Dienstleistungen",
+    "welcome": "Willkommen auf unserer Website!"
+  },
+  "es": {
+    "about_us": "Acerca de nosotros",
+    "contact_us": "Contáctanos",
+    "work_with_us": "Trabaja con nosotros",
+    "services": "Nuestros servicios",
+    "welcome": "¡Bienvenido a nuestro sitio web!"
+  }
+}
