@@ -1,6 +1,6 @@
 {
-  "name": "paco",
-  "version": "1.0.0",
+  "name": "@mtag-io/paco",
+  "version": "1.0.1",
   "description": "Paraglide Paraglide distributed messages collection utility",
   "main": "index.cjs",
   "bin": {
@@ -10,6 +10,7 @@
     "test": "test"
   },
   "scripts": {
+    "publish": "npm publish --access=public",
     "test": "node --test ./test/*.specs.cjs"
   },
   "keywords": [
