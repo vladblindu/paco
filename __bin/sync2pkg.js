@@ -102,7 +102,7 @@ const run = () => {
     const pkg = require(pkgPath)
 
     const readme = fs.readFileSync(readmePath, "utf-8")
-    console.log(`Sync ${readme}`)
+    console.log(`Sync ${readmePath}`)
 
     const newReadme = replaceReadmeHeader(readme, pkg)
     fs.writeFileSync(readmePath, newReadme)
