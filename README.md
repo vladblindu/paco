@@ -1,6 +1,6 @@
 # PACO
 ### Paraglide Paraglide distributed messages collection utility
-#### Version: 1.0.0
+#### Version: 1.0.1
 ![icon100.png](__resources%2Ficon100.png)
 #### Repository: https://github.com/vladblindu/paco.git
 
@@ -38,3 +38,7 @@ Before the collection, this utility:
 
 The utility will also check the available languages and entry keys in all collected files
 warning about missing ones,
+
+There are for sure a lot of improvements to be made. Please fork and
+do whatever you think it would make this little piece of code better and
+also file any issue you encounter. I will do my best to fix them.
