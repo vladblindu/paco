@@ -1,6 +1,7 @@
 const {describe, it} = require("node:test")
 const assert = require("node:assert")
-const {arrKeyDiff, makeMessagePath} = require("../helpers.cjs")
+const {arrKeyDiff, makeMessagePath, parseArgs} = require("../helpers.cjs")
+const {appArgs} = require("../config.cjs")
 
 
 describe("helpers", () => {
@@ -33,6 +34,61 @@ describe("helpers", () => {
                 makeMessagePath(pat, lang),
                 expected
             )
+        })
+    })
+
+    describe("parseArgs", () => {
+
+        const expected = {
+            help: true,
+            version: true,
+            config: "test.config.json",
+            root: "./",
+            srcRoot: "./src",
+            inlangDir: "./test.inlang",
+            settingsFileName: "test.settings.json"
+        }
+
+        it("should parse valid short args", () => {
+            process.argv = [
+                "node",
+                "helpers.specs.cjs",
+                "-h",
+                "-v",
+                "-c", "test.config.json",
+                "-r", "./",
+                "-R", "./src",
+                "-i", "./test.inlang",
+                "-s", "test.settings.json"
+            ]
+
+            const expected = {
+                help: true,
+                version: true,
+                config: "test.config.json",
+                root: "./",
+                srcRoot: "./src",
+                inlangDir: "./test.inlang",
+                settingsFileName: "test.settings.json"
+            }
+            const actual = parseArgs(appArgs)
+            assert.deepEqual(actual, expected)
+        })
+
+        it("should parse valid long args", () => {
+            process.argv = [
+                "node",
+                "helpers.specs.cjs",
+                "--help",
+                "--version",
+                "--config", "test.config.json",
+                "--root", "./",
+                "--srcRoot", "./src",
+                "--inlangDir", "./test.inlang",
+                "--settingsFileName", "test.settings.json"
+            ]
+            const actual = parseArgs(appArgs)
+            assert.deepEqual(actual, expected)
         })
     })
 })

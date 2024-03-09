@@ -1,9 +1,11 @@
 const {join} = require("path")
-const {getConfig} = require("./config.cjs")
+const {getConfig, appArgs, helpScreen} = require("./config.cjs")
 const {
     writeJson,
     collectMessageFiles,
     makeMessagePath,
+    parseArgs,
+    getLocalPkg
 } = require("./helpers.cjs")
 const {checkLangFile} = require("./check.cjs")
 
@@ -55,7 +57,7 @@ const compactLangContent = fileData =>
 const writeMessagesData = (fileData, config, write = writeJson) => {
     const messagesData = compactLangContent(fileData)
     Object.keys(messagesData).forEach(lang => {
-        const pth = makeMessagePath(config.messagesPathPattern, lang)
+        const pth = join(config.root, makeMessagePath(config.messagesPathPattern, lang))
         write(pth, messagesData[lang])
     })
 }
@@ -78,10 +80,28 @@ function main(opts, write = writeJson) {
     writeMessagesData(fileData, config, write)
 }
 
+const run = () => {
+    const {help, version, ...opts} = parseArgs(appArgs)
+
+    if (help) {
+        const pkg = getLocalPkg()
+        console.log(helpScreen(pkg))
+        process.exit(0)
+    }
+
+    if (version) {
+        const pkg = getLocalPkg()
+        console.log(`Version: ${pkg.version}`)
+    }
+
+    main(opts)
+}
+
 module.exports = {
     updateInlangSettings,
     collectMessageFiles,
     compactLangContent,
     writeMessagesData,
-    main
+    main,
+    run
 }

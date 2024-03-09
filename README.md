@@ -1,11 +1,14 @@
-# Paco
-### Paraglide distributed messages collection utility
-
+# PACO
+### Paraglide Paraglide distributed messages collection utility
+#### Version: 1.0.0
 ![icon100.png](__resources%2Ficon100.png)
+#### Repository: https://github.com/vladblindu/paco.git
 
 This is a small utility package that collects distributed messages json files
 scattered allover a project and saves them in the folder and with the format
 that [paraglide](https://inlang.com/m/gerre34r/library-inlang-paraglideJs) expects.
+
+>The present utility assumes you have an already installed instance of **paraglide**.
 
 Paraglide expects a single file per language, which may not be very useful if you
 want to re-utilise a piece (let's say a component). That's why, you may just add a **languagePattern**

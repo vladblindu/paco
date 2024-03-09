@@ -1,4 +1,7 @@
 const fs = require("fs")
+const arg = require("arg")
+const {join} = require("path")
+const PACKAGE_JSON = "package.json"
 
 /**
  * @param {object} a1
@@ -75,11 +78,44 @@ const exists = (pth, strict = true) => {
 const makeMessagePath = (pattern, lang) =>
     pattern.replace(/{(.*?)}/, lang)
 
+/**
+ * Parses the command line arguments.
+ *
+ * @param {Record<string, any>} appArgs - The command line arguments to parse.
+ * @returns {ConfigOpts & {help?: string, version?: string}} - An object representing the parsed arguments.
+ */
+const parseArgs = (appArgs) => {
+    const tmp = {
+        root: process.cwd()
+    }
+    try {
+        const args = arg(appArgs)
+        return Object.keys(args).reduce(
+            (acc, k) => {
+                if (k !== "_" && args.hasOwnProperty(k)) {
+                    const key = k.replace(/^-+/, "")
+                    acc[key] = args[k]
+                }
+                return acc
+            }, tmp)
+    } catch (err) {
+        console.error(`ERROR: Unable to parse.${err}.`)
+        return tmp
+    }
+}
+
+const getLocalPkg = () => {
+    const pth = join(__dirname, PACKAGE_JSON)
+    return exists(pth) && require(pth)
+}
+
 module.exports = {
     arrKeyDiff,
     omit,
     collectMessageFiles,
     exists,
     writeJson,
-    makeMessagePath
+    makeMessagePath,
+    parseArgs,
+    getLocalPkg
 }

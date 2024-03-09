@@ -135,8 +135,8 @@ describe("main", () => {
 
         const configOpts = {
             root: join(__dirname, "__fixtures__"),
-            configFileName: "./main-test.config.json",
-            inlangPath: "./test.inlang"
+            config: "./main-test.config.json",
+            inlangDir: "./test.inlang"
         }
 
         const pattern = getMessagesPathPattern(testConfig)

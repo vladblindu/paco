@@ -27,9 +27,9 @@ type WriteJson = (pth: string, o: object) => void
 type ConfigOpts = {
     root: string
     sourceRoot?: string
-    inlangPath?: string
+    inlangDir?: string
     settingsFileName?: string,
-    configFileName?: string
+    config?: string
 }
 
 type PartialHostConfig = Partial<HostConfig>
@@ -42,4 +42,12 @@ type Config = {
     messagesPathPattern: string
     installedLangs: string[]
     inlangSettingsPath: string,
+}
+
+type Package = {
+    name: string,
+    version: string,
+    description: string,
+    author?: string
+    repository?: string
 }

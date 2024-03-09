@@ -36,7 +36,7 @@ describe("config", () => {
 
         it("should get the right inlangSettingsPath with options", () => {
             const actual = getInlangSettingsPath(root, {
-                inlangPath: "test.inlang",
+                inlangDir: "test.inlang",
                 settingsFileName: "tSettings.json"
             })
             assert.strictEqual(
@@ -94,8 +94,8 @@ describe("config", () => {
 
             const configOpts = {
                 root,
-                configFileName: "test.config.json",
-                inlangPath: "test.inlang"
+                config: "test.config.json",
+                inlangDir: "test.inlang"
             }
             const actual = getConfig(configOpts)
             const expected = {

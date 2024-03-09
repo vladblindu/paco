@@ -2,7 +2,7 @@
   "name": "paco",
   "version": "1.0.0",
   "description": "Paraglide Paraglide distributed messages collection utility",
-  "main": "index.js",
+  "main": "index.cjs",
   "directories": {
     "test": "test"
   },
