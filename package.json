@@ -15,8 +15,9 @@
     "node",
     "commonjs"
   ],
-  "author": "M-Tag",
+  "author": "Vlad Blindu",
   "license": "MIT",
+  "repository": "https://github.com/vladblindu/paco.git",
   "types": "./index.d.ts",
   "dependencies": {
     "arg": "^5.0.2"
