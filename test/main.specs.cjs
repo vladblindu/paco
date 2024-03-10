@@ -43,7 +43,7 @@ describe("updateInlangSettings", () => {
                 restLanguageTags: ["de", "it"],
                 messagesFileName: "msf.json",
                 messagesPath: "./testMsg",
-                messagesPathPattern: "{test}.json",
+                messagesPathPattern: "{test}.json"
             },
             installedLangs: ["ru", "de", "it"],
             inlangSettingsPath: "test.inlang",
@@ -100,7 +100,7 @@ describe("writeMessagesData", () => {
             }
         ]
 
-        const messagesPathPattern = "./test.inlang/{languageTag}.json"
+        const messagesPathPattern = "test.inlang/{languageTag}.json"
 
         const tmp = Object.keys(messages1).map(
             lang => ({
@@ -108,19 +108,23 @@ describe("writeMessagesData", () => {
                 data: {
                     ...messages1[lang],
                     ...messages2[lang],
-                    ...messages3[lang],
+                    ...messages3[lang]
                 }
             })
         )
 
         const mockWrite = (pth, data) => {
-            const pthIdx = tmp.findIndex(item => item.pth === pth)
+            const pthIdx = tmp.findIndex(
+                item =>
+                    item.pth === pth
+            )
             assert.deepEqual(tmp[pthIdx].data, data)
             tmp.splice(pthIdx, 1)
         }
 
         const opts = {
-            messagesPathPattern,
+            root: "./",
+            messagesPathPattern
         }
 
         // noinspection JSCheckFunctionSignatures
@@ -133,8 +137,9 @@ describe("main", () => {
 
     it("should collect all messages files and write valid output", () => {
 
+        const root = join(__dirname, "__fixtures__")
         const configOpts = {
-            root: join(__dirname, "__fixtures__"),
+            root,
             config: "./main-test.config.json",
             inlangDir: "./test.inlang"
         }
@@ -143,11 +148,11 @@ describe("main", () => {
 
         const tmp = Object.keys(messages1).map(
             lang => ({
-                pth: makeMessagePath(pattern, lang),
+                pth: join(root, makeMessagePath(pattern, lang)),
                 data: {
                     ...messages1[lang],
                     ...messages2[lang],
-                    ...messages3[lang],
+                    ...messages3[lang]
                 }
             })
         )

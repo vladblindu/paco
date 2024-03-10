@@ -1,6 +1,6 @@
-# PACO
+# @MTAG-IO/PACO
 ### Paraglide Paraglide distributed messages collection utility
-#### Version: 1.0.0
+#### Version: 1.0.1
 ![icon100.png](__resources%2Ficon100.png)
 #### Repository: https://github.com/vladblindu/paco.git
 
